@@ -12,7 +12,7 @@
     "scripts": {
         "dev": "cd src/app && NODE_ENV=development next",
         "start": "cd src/app && NODE_ENV=production next start",
-        "build-frontend": "cd src/app && next build",
+        "build-frontend": "cd src/app && next build && cp -f \"$(go env GOROOT)/misc/wasm/wasm_exec.js\" public/",
         "build-go": "cd src/go && GOOS=js GOARCH=wasm go build -o ../app/public/main.wasm",
         "build": "yarn build-go && yarn build-frontend",
         "lint-frontend": "cd src/app && yarn lint",
